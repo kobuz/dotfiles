@@ -6,6 +6,10 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 call vundle#end()
 
@@ -64,6 +68,15 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$'] " ignored file extentions
+
+" Powerline setup
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set laststatus=2
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 if has("gui_running")
   set guioptions-=T
