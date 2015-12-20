@@ -1,25 +1,37 @@
 set nocompatible
-filetype off
 
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'fholgado/minibufexpl.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'guns/vim-clojure-static'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
+
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
 set encoding=utf-8
 set fileencoding=utf-8
 
-" enable filetype plugin
 syntax on
 filetype plugin indent on
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
+
+let mapleader=","
 
 set number
 set numberwidth=4
@@ -46,7 +58,6 @@ set tabstop=4
 set softtabstop=4
 set smarttab
 set lbr
-set paste
 
 set autoindent
 set nowrap
@@ -70,18 +81,9 @@ noremap <Right> <NOP>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$'] " ignored file extentions
 
 " Powerline setup
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-if has("gui_running")
-  set guioptions-=T
-  set background=dark
-  set t_Co=256
-  set background=dark
-  colorscheme wombat
-endif
