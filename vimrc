@@ -11,9 +11,10 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'guns/vim-clojure-static'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 Plugin 'tpope/vim-fireplace'
 Plugin 'vim-scripts/paredit.vim'
+Plugin 'lambdatoast/elm.vim'
 
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
@@ -83,7 +84,4 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$'] " ignored file extentions
 " Powerline setup
 set laststatus=2
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1
